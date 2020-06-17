@@ -1,0 +1,127 @@
+{{define "Tabela"}}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Golang Web</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"> </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"> </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"> </script>
+
+  
+    <style>  .card { margin-top: 100px;}   .text-info:hover{     color: teal !important; }  .text-danger:hover{     color: brown !important;   }  a{     color: #ffffff;  } a:hover{      color: unset !important;      text-decoration: transparent !important; }   table{     border: #694db6 !important; }         td{             background-color: white;          }          th{             border: #694db6 !important;         }       body{         color: white;        font-weight: 700;    }     body {  background-image: url("https://user-images.githubusercontent.com/47280551/67257321-cbd13000-f461-11e9-8d66-3f97b558349a.png");  background-color: #cccccc; }                  input {        outline: none;    }    input[type=search] {        -webkit-appearance: textfield;        -webkit-box-sizing: content-box;        font-family: inherit;        font-size: 80%;     }    input::-webkit-search-decoration,    input::-webkit-search-cancel-button {        display: none;    }          input[type=search] {            border: solid 1px #ccc;        padding: px 10px 9px 32px;        width: 55px;               -webkit-border-radius: 10em;        -moz-border-radius: 10em;        border-radius: 10em;               -webkit-transition: all .5s;        -moz-transition: all .5s;        transition: all .5s;    }    input[type=search]:focus {        width: 130px;        background-color: #fff;        border-color: #694db6;               -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);        -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);        box-shadow: 0 0 5px rgba(109,207,246,.5);    }       .btn.btn-info {     color: #ffffff;     background-color: #694db6;     background-image: linear-gradient(to bottom, #694db6, #694db6);     border-color: #694db6 #694db6 #694db6; } .btn.btn-info:hover {     color: #ffffff;     background-color: #694db6;     background-image: linear-gradient(to bottom, #694db6, #694db6);     border-color: #694db6 #694db6 #694db6; }        th{            font-family: Lato-Bold !important;        font-size: 18px !important;        color: #fff !important;        line-height: 1.4 !important;        background-color: #694db6 !important;        }        td{            font-family: Lato-Regular !important;        font-size: 15px !important;        color: gray !important;        line-height: 1.4 !important;        }       .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {               background-color: #694db6 !important;            border-color: #694db6 !important;    }       
+    </style>
+
+
+</head>
+
+<body>
+    <div class="site-header-main">
+            <div class="primary-menu-container">
+                      </div>
+            </div>
+
+            <header class="site-headder">
+                <div align="right" class="container">
+                    <br>
+                    <a href="/" data-hover="Home"><span>SAIR</span></a>
+
+                </div>
+            </header>
+
+            <div class="container">
+                <section class="card">
+                    <div>
+                                  <!--Table-->
+                        <table id="example" class="mdl-data-table table table-bordered table-hover " style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Descrição</th>
+                                    <th>Preço</th>
+                                    <th>Quantidade</th>
+                                    <th>Editar</th>
+                                    <th>Excluir</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {{range .}}
+                                <tr>
+                                    <td>{{.Nome}}</td>
+                                    <td>{{.Descricao}}</td>
+                                    <td>{{.Preco}}</td>
+                                    <td>{{.Quantidade}}</td>
+                                    <td> <a href="edit?id={{.Id}}" class="text-info"> <i class="material-icons" alt="Editar" data-toggle="tooltip" title="Editar">&#xE254;</i></a> </td>
+                                    <td> <a style="cursor:pointer" onclick="onDelete('{{.Id}}')" class="text-danger"> <i class="material-icons" alt="Deletar" data-toggle="tooltip" title="Deletar">&#xE5CD</i></a></td>
+                                </tr>
+
+                                {{end}}
+
+                       </tbody>
+            </table>
+                                                     <!--Table-->
+                                                     
+                </section>
+                <div class="card-footer">
+                    <a href="/new" type="button" class="btn btn-info btn-lg " class="material-icons" alt="Adicionar Novo Produto" data-toggle="tooltip" title="Adicionar novo Produto">Adicionar novo Produto</a>
+
+                </div> </div>
+               
+                </body>
+                
+     <!-- Translation Table-->
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable({
+            columnDefs: [{
+                targets: [0, 1, 2],
+                className: 'mdl-data-table__cell--non-numeric'
+            }],
+            "language": idioma_portugues
+        });
+    });
+
+    var idioma_portugues = {
+        "sEmptyTable": "Nenhum registro encontrado",
+        "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+        "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+        "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+        "sInfoPostFix": "",
+        "sInfoThousands": ".",
+        "sLengthMenu": "<font size=4> Resultados por página  _MENU_ </font>",
+        "sLoadingRecords": "Carregando...",
+        "sProcessing": "Processando...",
+        "sZeroRecords": "Nenhum registro encontrado",
+        "sSearch": "<font size=4> Procurar</font> ",
+        "oPaginate": {
+            "sNext": "Próximo",
+            "sPrevious": "Anterior",
+            "sFirst": "Primeiro",
+            "sLast": "Último"
+        },
+        "oAria": {
+            "sSortAscending": ": Ordenar colunas de forma ascendente",
+            "sSortDescending": ": Ordenar colunas de forma descendente"
+        }
+    }
+</script>
+
+<script>
+    function onDelete(id) {
+        let resposta = confirm("Tem certeza que deseja deletar esse produto?")
+        if (resposta) {
+            window.location = "/delete?id=" + id
+        }
+    }
+</script>
+{{end}}

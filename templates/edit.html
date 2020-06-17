@@ -1,0 +1,59 @@
+{{define "Edit"}} 
+
+{{template "_head"}}
+
+<div class="container"></div>
+
+<style> a:hover { border: transparent !important; color: #e2d8d8 !important; background-color: black !important; text-decoration: transparent!important; }  input[type="text"], input[type="number"] { width: 88%; padding: 15px 0px 15px 20px; border: 1px solid #fff; outline: none; font-size: 14px; color: #fff; margin: 14px 0px; font-family: 'Roboto', sans-serif; } /* */  input[type="text"] { background: transparent; background-size: 24px; }  input[type="number"] { background: transparent; }  .btn-outline-dark { color: #ffffff; border: #694db6 !important; background-color: #694db6; background-image: linear-gradient(to bottom, #694db6, #694db6); border-color: #694db6 #694db6 #694db6; }  .btn-outline-dark:hover { color: #ffffff; background-color: #694db6; background-image: linear-gradient(to bottom, #694db6, #694db6); border-color: #694db6 #694db6 #694db6; }
+
+</style>
+
+<body class="is-site-bg-border site-bg-color is-site-bg-constellation subscribe-form-closed is-loaded">
+    <div id="content">
+        <!--Effects-->
+        <canvas class="site-bg-canvas layer" data-depth=".30" style="position: absolute; display: block; left: 0px; top: 0px; transform: translate3d(40.6172px, -6.95973px, 0px); transform-style: preserve-3d; backface-visibility: hidden; opacity: 1;" width="1360" height="624"></canvas>
+        <div class="site-bg-img"></div>
+        <div class="site-bg-video"></div>
+        <div class="site-bg-effect layer" data-depth=".30" style="position: relative; display: block; left: 0px; top: 0px; transform: translate3d(40.6172px, -6.95973px, 0px); transform-style: preserve-3d; backface-visibility: hidden;"></div>
+        <div class="site-bg-border" style="display: block; opacity: 1;"></div>
+        <div class="site-canvas">
+            <!--Effects-->
+
+            <form method="POST" action="update">
+                <input type="hidden" name="id" value="{{.Id}}">
+
+                <!--Form-->
+                <div class="main-w3l">
+                    <div class="w3layouts-main">
+
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" value="{{.Nome}}">
+
+                        <label for="descricao">Descrição:</label>
+                        <input type="text" name="descricao" value="{{.Descricao}}">
+
+                        <label for="preco">Preço:</label>
+                        <input type="number" name="preco" step="0.01" value="{{.Preco}}">
+
+                        <label for="quantidade">Quantidade:</label>
+                        <input type="number" name="quantidade" value="{{.Quantidade}}">
+
+            </form>
+            <br>
+            <button type="submit" value="editar" class="btn btn-outline-dark" class="material-icons" alt="Editar Produto" data-toggle="tooltip" title="Editar Produto">Editar</button>
+            <a class="btn btn-outline-dark" href="/tabela" class="material-icons" alt="Voltar" data-toggle="tooltip" title="Voltar">Voltar</a>
+
+            </div>
+            </div>
+        </div>
+        <!--/Form-->
+
+        <script src="https://influenciainvisivel.com.br/arquivos/jquery-1.11.3.min.js.download"></script>
+        <script src="https://influenciainvisivel.com.br/arquivos/bootstrap.min.js.download"></script>
+        <script src="https://influenciainvisivel.com.br/arquivos/main.js.download"></script>
+
+</body>
+
+</html>
+
+{{end}}
