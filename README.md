@@ -7,18 +7,18 @@
 <br><br>
 
 
-## 🎓 Instalação
+## 🎓 Installation
 
-Você precisa ter a biblioteca postgres
+You need to have the postgres library
 
 
 ```sh
 $ go get github.com/lib/pq
 ```
 
-Em seguida modifique a string de conexão em: goweb/db.go 
+Then modify the connection string in: goweb/db.go 
 
-Você precisa modificar os carminhos, de acordo onde sua pasta está. github.com/goweb
+You need to modify the carmines, according to where your folder is. github.com/goweb
 
 
 <br><br><br>
@@ -26,9 +26,9 @@ Você precisa modificar os carminhos, de acordo onde sua pasta está. github.com
 
 
 
-## 📝 Descrição 
+## 📝 Description 
 
-Responsivo website, feito com algumas bibliotecas do jQuery.<br>
+Responsive website, made with some libraries from jQuery.<br>
 <br><br>
 
 
@@ -36,7 +36,7 @@ Responsivo website, feito com algumas bibliotecas do jQuery.<br>
 
 
 
-## 📁 Principais Bibliotecas
+## 📁 Main Libraries
 
 [Darkmode](https://darkmodejs.learn.uno/)<br>
 [DataTable](https://datatables.net/)<br><br><br><br>
@@ -47,7 +47,7 @@ Responsivo website, feito com algumas bibliotecas do jQuery.<br>
 
 
 
-## 🚀 Tecnologias Usadas 
+## 🚀 Technologies Used 
 
 ![golang](https://user-images.githubusercontent.com/47280551/66277185-3fbfe580-e871-11e9-9090-0bcd4752a3d7.png)
 ![jq](https://user-images.githubusercontent.com/47280551/66280701-46a92100-e88e-11e9-811a-26a84186dd79.png)
@@ -58,7 +58,7 @@ Responsivo website, feito com algumas bibliotecas do jQuery.<br>
 
 
 
-## 🌏 Suporte a todos navegadores atuais 
+## 🌏 Support for all current browsers
 
 |<img src="https://user-images.githubusercontent.com/1215767/34348387-a2e64588-ea4d-11e7-8267-a43365103afe.png" alt="Chrome" width="16px" height="16px" /> Chrome | <img src="https://user-images.githubusercontent.com/1215767/34348590-250b3ca2-ea4f-11e7-9efb-da953359321f.png" alt="IE" width="16px" height="16px" /> Internet Explorer | <img src="https://user-images.githubusercontent.com/1215767/34348380-93e77ae8-ea4d-11e7-8696-9a989ddbbbf5.png" alt="Edge" width="16px" height="16px" /> Edge | <img src="https://user-images.githubusercontent.com/1215767/34348394-a981f892-ea4d-11e7-9156-d128d58386b9.png" alt="Safari" width="16px" height="16px" /> Safari | <img src="https://user-images.githubusercontent.com/1215767/34348383-9e7ed492-ea4d-11e7-910c-03b39d52f496.png" alt="Firefox" width="16px" height="16px" /> Firefox |
 | :---------: | :---------: | :---------: | :---------: | :---------: |
@@ -68,6 +68,6 @@ Responsivo website, feito com algumas bibliotecas do jQuery.<br>
 
 
 <br><br>
-## 🔓 Licença 
+## 🔓 License 
 MIT © [Erlan Lúcio](https://br.linkedin.com/in/erlan-lucio-760745183)
 
